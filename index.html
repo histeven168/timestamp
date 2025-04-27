@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en" xml:lang="en"  xmlns:fb="http://ogp.me/ns/fb#" xmlns:og="http://ogp.me/ns/fb#">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Timestamp online converter - free, real-time</title>
+<meta name="keywords" content="Timestamp online converter"/>
+<meta name="description" id="description" content="Timestamp online converter provides a free and real-time online way to convert Unix time to the current human date, UTC and ISO."/>
+<meta name="applicable-device" content="pc,mobile">
+<meta name="viewport" content="initial-scale=1.0,maximum-scale=3.0,width=device-width,minimal-ui,viewport-fit=cover" />
+<meta name="format-detection" content="telephone=no,email=no,address=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="stylesheet" href="weui.min.css">
+<link href="all.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="header">
+    <ul>
+        <div style="float:left"><a href="/"><img src="/logo.png" width="130" height="39" alt="timestamp online"></a></div>
+        <div class="menu">
+            <div class="menu-item">
+                English
+            </div>
+        </div>
+    </ul>
+</div>
+<div class="clear15"></div><div class="clear15"></div><div class="clear"></div><center><h1>Timestamp Online Converter</h1></center>    <div class="main">
+    <div class="time-card">
+        <div class="label0">Timestamp</div><div id="currentTimestamp" class="code-example2">1745718798</div>
+        <div class="fas value0 copy-icon" id="copyTime"></div>
+        <div class="clearfix"></div>
+        <div class="label0">Milliseconds</div><div id="currentTimestamp2" class="code-example2">1745718798</div>
+        <div class="fas value0 copy-icon" id="copyTime2"></div>
+        <div class="clearfix"></div>
+        <div class="label0">DateTime</div><div id="currentDateTime" class="code-example2">2025-04-26 18:53:18</div>
+        <div style="float:left; margin-left:20px;"><div class="time-controls"><button id="toggleTimer" class="stop">Stop</button></div></div>
+    </div>
+
+    <a name="input-box"></a>
+    <div class="nav-tabs">
+        <div id="tabs1" class="nav-item active" data-target="timestampToDate">Timestamp to date</div>
+        <div id="tabs2" class="nav-item" data-target="dateToTimestamp">Date to timestamp</div>
+    </div>
+	
+	<div id="timestampToDate" class="converter-section">
+        
+        <div class="input-container">
+            <div class="input-box">
+                <input type="text" id="timestampInput" placeholder="" autofocus>
+                <span id="deleteButton" class="fas fa-trash-can"></span>
+            </div>
+        </div>
+        <div class="result-item">
+            <div class="result-label">Your Local Time</div>
+            <div class="result-value code-example" id="localResult">N/A</div>
+            <i class="fas copy-icon" onclick="copyText('localResult')"></i>
+        </div>
+        <div class="result-item">
+            <div class="result-label">Your Time Zone</div>
+            <div class="result-value code-example" id="timeZoneResult">N/A</div>
+            <i class="fas copy-icon" onclick="copyText('timeZoneResult')"></i>
+        </div>
+        <div class="result-item none">
+            <div class="result-label">Timestamp</div>
+            <div class="result-value code-example" id="timestampResult">N/A</div>
+            <i class="fas copy-icon" onclick="copyText('timestampResult')"></i>
+        </div>
+        <div class="result-item">
+            <div class="result-label">Timestamp in Milliseconds</div>
+            <div class="result-value code-example" id="timestampMillisResult">N/A</div>
+            <i class="fas copy-icon" onclick="copyText('timestampMillisResult')"></i>
+        </div>
+        <div class="result-item">
+            <div class="result-label">ISO 8601</div>
+            <div class="result-value code-example" id="isoResult">N/A</div>
+            <i class="fas copy-icon" onclick="copyText('isoResult')"></i>
+        </div>
+        <div class="result-item">
+            <div class="result-label">UTC(GMT)</div>
+            <div class="result-value code-example" id="utcResult">N/A</div>
+            <i class="fas copy-icon" onclick="copyText('utcResult')"></i>
+        </div>
+        
+        <a name="programming"></a>
+        <h2>Convert timestamp to datetime in programming</h2>
+    	<div class="language-methods">
+        <div class="method-item">
+            <div class="language-name">PHP</div>
+            <code class="code-example">$datetime = date('Y-m-d H:i:s', $timestamp);</code>
+            <i class="fas copy-icon" onclick="copyCode('$datetime = date(\'Y-m-d H:i:s\', $timestamp);')"></i>
+        </div>
+        <div class="method-item">
+            <div class="language-name">Java</div>
+            <code class="code-example">Date date = new Date(timestamp * 1000L);</code>
+            <i class="fas copy-icon" onclick="copyCode('Date date = new Date(timestamp * 1000L);')"></i>
+        </div>
+        <div class="method-item">
+            <div class="language-name">Python</div>
+            <code class="code-example">import datetime; dt = datetime.datetime.fromtimestamp(timestamp)</code>
+            <i class="fas copy-icon" onclick="copyCode('import datetime; dt = datetime.datetime.fromtimestamp(timestamp)')"></i>
+        </div>
+        <div class="method-item">
+            <div class="language-name">JavaScript</div>
+            <code class="code-example">const date = new Date(timestamp * 1000);</code>
+            <i class="fas copy-icon" onclick="copyCode('const date = new Date(timestamp * 1000);')"></i>
+        </div>
+        <div class="method-item">
+            <div class="language-name">Pandas</div>
+            <code class="code-example">import pandas as pd; dt = pd.to_datetime(timestamp, unit='s')</code>
+            <i class="fas copy-icon" onclick="copyCode('import pandas as pd; dt = pd.to_datetime(timestamp, unit=\'s\')')"></i>
+        </div>
+        <div class="method-item">
+            <div class="language-name">Ruby</div>
+            <code class="code-example">datetime = Time.at(timestamp)</code>
+            <i class="fas copy-icon" onclick="copyCode('datetime = Time(timestamp.at)')"></i>
+        </div>
+        <div class="method-item">
+            <div class="language-name">C#</div>
+            <code class="code-example">DateTime dateTime = DateTimeOffset.FromUnixTimeSeconds(timestamp).DateTime;</code>
+            <i class="fas copy-icon" onclick="copyCode('DateTime dateTime = DateTimeOffset.FromUnixTimeSeconds(timestamp).DateTime;')"></i>
+        </div>
+        <div class="method-item">
+            <div class="language-name">MATLAB</div>
+            <code class="code-example">datetime('1970-01-01') + seconds(timestamp)</code>
+            <i class="fas copy-icon" onclick="copyCode('datetime(\'1970-01-01\') + seconds(timestamp)')"></i>
+        </div>
+        <div class="method-item">
+            <div class="language-name">SQL</div>
+            <code class="code-example">SELECT FROM_UNIXTIME(timestamp);</code>
+            <i class="fas copy-icon" onclick="copyCode('SELECT FROM_UNIXTIME(timestamp);')"></i>
+        </div>
+        <div class="method-item">
+            <div class="language-name">Oracle</div>
+            <code class="code-example">SELECT TO_DATE('1970-01-01', 'YYYY-MM-DD') + NUMTODSINTERVAL(timestamp, 'SECOND') FROM DUAL;</code>
+            <i class="fas copy-icon" onclick="copyCode('SELECT TO_DATE(\'1970-01-01\', \'YYYY-MM-DD\') + NUMODTSINTERVAL(timestamp, \'SECOND\') FROM DUAL;')"></i>
+        </div>
+        <div class="method-item">
+            <div class="language-name">Excel</div>
+            <code class="code-example">=TEXT(DATE(1970,1,1)+timestamp/86400, "yyyy-mm-dd hh:mm:ss")</code>
+            <i class="fas copy-icon" onclick="copyCode('=TEXT(DATE(1970,1,1)+timestamp/86400, \"yyyy-mm-dd hh:mm:ss\")')"></i>
+        </div>
+    </div>
+    </div>
+
+    <div id="dateToTimestamp" class="converter-section" style="display:none;">
+        <div class="input-container">
+            <div class="input-box">
+            <input type="text" id="dateInput" value="">
+            <span id="deleteButton2" class="fas fa-trash-can"></span>
+            </div>
+        </div>
+        <div class="result-item">
+            <div class="result-label">Timestamp</div>
+            <div class="result-value code-example" id="dateTimestampResult">N/A</div>
+            <i class="fas copy-icon" onclick="copyText('dateTimestampResult')"></i>
+        </div>
+        <div class="result-item">
+            <div class="result-label">Timestamp in Milliseconds</div>
+            <div class="result-value code-example" id="dateTimestampMillisResult">N/A</div>
+            <i class="fas copy-icon" onclick="copyText('dateTimestampMillisResult')"></i>
+        </div>
+        <div class="result-item">
+            <div class="result-label">Your Time Zone</div>
+            <div class="result-value code-example" id="dateTimeZoneResult">N/A</div>
+            <i class="fas copy-icon" onclick="copyText('dateTimeZoneResult')"></i>
+        </div>
+        <div class="result-item none">
+            <div class="result-label">Your Local Time</div>
+            <div class="result-value code-example" id="dateLocalResult">N/A</div>
+            <i class="fas copy-icon" onclick="copyText('dateLocalResult')"></i>
+        </div>
+        
+        <div class="result-item">
+            <div class="result-label">ISO 8601</div>
+            <div class="result-value code-example" id="dateIsoResult">N/A</div>
+            <i class="fas copy-icon" onclick="copyText('dateIsoResult')"></i>
+        </div>
+        <div class="result-item">
+            <div class="result-label">UTC(GMT)</div>
+            <div class="result-value code-example" id="dateUtcResult">N/A</div>
+            <i class="fas copy-icon" onclick="copyText('dateUtcResult')"></i>
+        </div>
+        <h2>Get the timestamps in programming</h2>
+        <div class="language-methods">
+            <div class="method-item">
+                <div class="language-name">PHP</div>
+                <code class="code-example">echo time();</code>
+                <i class="fas copy-icon" onclick="copyCode('echo time();')"></i>
+            </div>
+            <div class="method-item">
+                <div class="language-name">Java</div>
+                <code class="code-example">long timestamp = System.currentTimeMillis() / 1000;</code>
+                <i class="fas copy-icon" onclick="copyCode('long timestamp = System.currentTimeMillis() / 1000;')"></i>
+            </div>
+            <div class="method-item">
+                <div class="language-name">Python</div>
+                <code class="code-example">import time; timestamp = int(time.time())</code>
+                <i class="fas copy-icon" onclick="copyCode('import time; timestamp = int(time.time())')"></i>
+            </div>
+            <div class="method-item">
+                <div class="language-name">JavaScript</div>
+                <code class="code-example">const timestamp = Math.floor(Date.now() / 1000);</code>
+                <i class="fas copy-icon" onclick="copyCode('const timestamp = Math.floor(Date.now() / 1000);')"></i>
+            </div>
+            <div class="method-item">
+                <div class="language-name">Pandas</div>
+                <code class="code-example">import pandas as pd; timestamp = pd.Timestamp.now().timestamp()</code>
+                <i class="fas copy-icon" onclick="copyCode('import pandas as pd; timestamp = pd.Timestamp.now().timestamp()')"></i>
+            </div>
+            <div class="method-item">
+                <div class="language-name">Ruby</div>
+                <code class="code-example">timestamp = Time.now.to_i</code>
+                <i class="fas copy-icon" onclick="copyCode('timestamp = Time.now.to_i')"></i>
+            </div>
+            <div class="method-item">
+                <div class="language-name">C#</div>
+                <code class="code-example">long timestamp = DateTimeOffset.UtcNow.ToUnixTimeSeconds();</code>
+                <i class="fas copy-icon" onclick="copyCode('long timestamp = DateTimeOffset.UtcNow.ToUnixTimeSeconds();')"></i>
+            </div>
+            <div class="method-item">
+                <div class="language-name">MATLAB</div>
+                <code class="code-example">timestamp = posixtime(datetime('now'));</code>
+                <i class="fas copy-icon" onclick="copyCode('timestamp = posixtime(datetime(\'now\'));')"></i>
+            </div>
+            <div class="method-item">
+                <div class="language-name">SQL</div>
+                <code class="code-example">SELECT UNIX_TIMESTAMP(NOW());</code>
+                <i class="fas copy-icon" onclick="copyCode('SELECT UNIX_TIMESTAMP(NOW());')"></i>
+            </div>
+            <div class="method-item">
+                <div class="language-name">Oracle</div>
+                <code class="code-example">SELECT (SYSDATE - TO_DATE('1970-01-01', 'YYYY-MM-DD')) * 86400 FROM DUAL;</code>
+                <i class="fas copy-icon" onclick="copyCode('SELECT (SYSDATE - TO_DATE(\'1970-01-01\', \'YYYY-MM-DD\')) * 86400 FROM DUAL;')"></i>
+            </div>
+            <div class="method-item">
+                <div class="language-name">Excel</div>
+                <code class="code-example">=(NOW()-DATE(1970,1,1))*86400</code>
+                <i class="fas copy-icon" onclick="copyCode('=(NOW()-DATE(1970,1,1))*86400')"></i>
+            </div>
+        </div>
+    </div>
+    
+    <h2>What is the unix timestamp</h2>
+    <div class="knowledge-card">
+        
+<p>The Unix Timestamp, also known as Unix time or POSIX time, is a way to track time as the number of seconds that have elapsed since January 1, 1970, at 00:00:00 UTC. This point in time is called the Unix epoch.</p>
+<p>It is a fundamental concept in computing because it provides a simple and consistent way to represent time across different systems and platforms. Unix Timestamps are commonly used for logging events, calculating durations, and synchronizing time across various applications.</p>
+<p>Since it is based on UTC, the Unix Timestamp does not account for time zones or daylight saving time changes. To convert a Unix Timestamp to a local time, you need to add or subtract the appropriate time zone offset.</p>
+<p>Historically, Unix Timestamps were stored as 32-bit integers, which can only represent dates up to January 19, 2038. Modern systems use 64-bit integers to handle dates far into the future, avoiding the Year 2038 problem.</p>
+<p>Many programming languages provide built-in functions to work with Unix Timestamps, making it easy to convert between human-readable dates and Unix time. For example, JavaScript's <code class="code-example">Date.now()</code> and Python's <code class="code-example">time.time()</code> both return the current time as a Unix Timestamp.</p>
+    </div>
+    
+    <h2>Why convert the timestamp to human-readable date and time</h2>
+    <div class="knowledge-card">
+    
+    <p>Timestamps are great for computers, but they don't mean much to us humans.</p> 
+    <p>Converting timestamps to human-readable date and time makes it easier for people to understand when something happened.It helps with things like logging events, scheduling, and displaying dates in user interfaces.Basically, it bridges the gap between how computers store time and how we humans perceive it.</p>
+    </div>
+    
+    <h2>How can I convert a Unix timestamp (epoch) to datetime</h2>
+    <div class="knowledge-card">
+    	
+<h3>1. Converting timestamps in programming languages</h3>
+<ul>
+<a href="#programming"><code class="code-example">convert in programming languages</code></a>
+</ul>
+<h3>2. Use online tool like timestamp.onl to convert</h3>
+<ul><span style="float:left">Type in the timestamps in the input box on website: </span> <a href="#input-box"><code class="code-example">timestampdodate.org</code></a></ul>    </div>
+	<a name="unix2038"></a>
+	<h2>What is the year 2038 problem</h2>
+    <div class="knowledge-card">
+	
+<p>The Year 2038 Problem, also known as the Unix Millennium Bug or Y2K38, is a software issue affecting systems that use 32-bit signed integers to represent Unix timestamps[^2^].</p>
+<p>Unix timestamps count the number of seconds since January 1, 1970, 00:00:00 UTC. A 32-bit signed integer can only store values up to 2,147,483,647, which corresponds to January 19, 2038, at 03:14:07 UTC. After this point, the integer will overflow and reset to a negative value, causing systems to misinterpret the date as December 13, 1901[^2^].</p>
+<p>This issue could affect a wide range of systems, including embedded devices, operating systems, databases, and financial systems, potentially leading to crashes, errors, and data loss[^2^][^4^].</p>
+<p>Modern systems are transitioning to 64-bit integers, which can handle much larger values and avoid this problem. However, legacy systems and embedded devices may still be at risk[^2^][^4^].</p>
+<p>Organizations are advised to identify vulnerable systems, upgrade to 64-bit representations, and conduct thorough testing to mitigate the impact of the Year 2038 Problem[^4^].</p>
+    </div>
+    <footer>
+    <div class="copyright">© <strong> <font>Timestamp.onl</font></strong>  All rights reserved.</div>
+    <div class="clear"></div>
+    <center><img width="200" height="60" src="/logo.png" alt="timestamp online"><br><img width="50" height="50" src="/ico.png" alt="ico of timestamp online"></center>
+</footer>    </div>
+	<script type="text/javascript" src="global.js"></script>
+<div class="toast" id="toast">ok</div>
+<div class="save-screen" onclick="openPrompt()" style="display:none;">
+	<i class="fas fa-download"></i>
+</div>
+<div class="write-share" onClick="toggleShareDialog()">
+	<i class="fas fa-share"></i>
+</div>
+<div class="back-to-top" id="back-to-top" onclick="scrollToTop()">
+	<i class="fas fa-arrow-up"></i>
+</div>
+
+<div class="share-dialog" id="share-dialog">
+            <div class="share-option" onclick="shareToTwitter()">
+                <i class="fab fa-twitter"></i>
+                <span>Share to Twitter</span>
+            </div>
+            <div class="share-option" onclick="shareToFacebook()">
+                <i class="fab fa-facebook"></i>
+                <span>Share to Facebook</span>
+            </div>
+            <div class="share-option" onclick="shareToLine()">
+                <i class="fab fa-line"></i>
+                <span>Share to Line</span>
+            </div>
+            <div class="share-option" onclick="shareToWhatsApp()">
+                <i class="fab fa-whatsapp"></i>
+                <span>Share to WhatsApp</span>
+            </div>
+            <div class="share-option" onclick="shareToInstagram()">
+                <i class="fab fa-instagram"></i>
+                <span>Share to Instagram</span>
+            </div>
+            <div class="share-option" onclick="shareToSnapchat()">
+                <i class="fab fa-snapchat"></i>
+                <span>Share to Snapchat</span>
+            </div>
+            <div class="share-option" onclick="shareToGoogle()">
+                <i class="fab fa-google"></i>
+                <span>Share to Google</span>
+            </div>
+            <div class="share-option" onclick="shareToTelegram()">
+                <i class="fab fa-telegram"></i>
+                <span>Share to Telegram</span>
+            </div>
+            <div class="share-option" onclick="shareByEmail()">
+            <i class="fas fa-envelope"></i>
+            <span>Share via Email</span>
+        	</div>
+            <div id="share-ctrl-d" class="share-option" onclick="showToast('Hit CTRL+D')">
+                <i class="fas fa-desktop"></i>
+                <span>Ctrl+D to bookmark</span>
+            </div>
+            <div class="share-option" onclick="copyUrl()">
+                <i class="fas fa-link"></i>
+                <span>Copy Link</span>
+            </div>
+            <div class="share-option" onclick="toggleShareDialog();">
+                <center><i class="fas fa-x"></i></center>
+            </div>
+        </div>	<script type="text/javascript" src="index.js"></script>
+</body>
+</html>
